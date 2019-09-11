@@ -114,6 +114,7 @@ const data = [
 */
 
 function createArticle(articleData) {
+  // Create Elements
   const article = document.createElement('div');
   const articleTitle = document.createElement('h2');
   const articleDate = document.createElement('p');
@@ -121,7 +122,8 @@ function createArticle(articleData) {
   const paragraphTwo = document.createElement('p');
   const paragraphThree = document.createElement('p');
   const expandButton = document.createElement('span');
-  
+
+  // Create Structure
   article.appendChild(articleTitle);
   article.appendChild(articleDate);
   article.appendChild(paragraphOne);
@@ -129,6 +131,7 @@ function createArticle(articleData) {
   article.appendChild(paragraphThree);
   article.appendChild(expandButton);
 
+  // Set content
   articleTitle.textContent = articleData.title;
   articleDate.textContent = articleData.date;
   paragraphOne.textContent = articleData.firstParagraph;
@@ -136,6 +139,7 @@ function createArticle(articleData) {
   paragraphThree.textContent = articleData.thirdParagraph;
   expandButton.textContent = '\u25bc';
 
+  // Apply styles
   article.classList.add('article');
   articleTitle.classList.add('h2');
   articleDate.classList.add('date');
@@ -143,7 +147,8 @@ function createArticle(articleData) {
   paragraphTwo.classList.add('article');
   paragraphThree.classList.add('article');
   expandButton.classList.add('expandButton');
-  
+
+  // Add Event Listener
   expandButton.addEventListener('click', (e) => {
     article.classList.toggle('article-open'); 
   });

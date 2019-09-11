@@ -55,7 +55,7 @@ function createMenu() {
   // Apply styles
   menuClass.classList.add('menu');
 
-  // Add Event Listener(s)
+  // Add Event Listener
   menu.addEventListener('click', e => menuClass.classList.toggle('menu--open'));
 
   return menuClass;
