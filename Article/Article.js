@@ -121,6 +121,7 @@ function createArticle(articleData) {
   const paragraphTwo = document.createElement('p');
   const paragraphThree = document.createElement('p');
   const expandButton = document.createElement('span');
+  
 
   article.appendChild(articleTitle);
   article.appendChild(articleDate);
@@ -128,13 +129,40 @@ function createArticle(articleData) {
   article.appendChild(paragraphTwo);
   article.appendChild(paragraphThree);
   article.appendChild(expandButton);
+  
 
   articleTitle.textContent = articleData.title;
   articleDate.textContent = articleData.date;
   paragraphOne.textContent = articleData.firstParagraph;
   paragraphTwo.textContent = articleData.secondParagraph;
   paragraphThree.textContent = articleData.thirdParagraph;
-  expandButton.textContent = '\U+25bc';
+  expandButton.textContent = '\u25bc';
+  // expandButton.textContent = '\u25b2';
 
+  article.classList.add('article');
+  articleTitle.classList.add('h2');
+  articleDate.classList.add('p');
+  paragraphOne.classList.add('article');
+  paragraphTwo.classList.add('article');
+  paragraphThree.classList.add('article');
+  expandButton.classList.add('expandButton');
   
+
+  expandButton.addEventListener('click', (e) => {
+    expandButton.classList.toggle('article-open');
+    
+  });
+
+  return article;
+
+
 }
+
+
+const articles = document.querySelector('.articles');
+
+data.forEach(data => {
+  articles.appendChild(createArticle(data));
+
+});
+
